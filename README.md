@@ -1,4 +1,3 @@
-# secure-distributed-messenger
 # Secure Distributed Messenger
 
 ## Project Overview
