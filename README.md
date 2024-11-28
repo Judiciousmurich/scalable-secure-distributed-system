@@ -42,5 +42,5 @@ pip install -r requirements.txt
 5. Final Demonstration
 
 ## Contributors
-[Your Name]
-[Your Registration Number]
+[JUDITH MUTHUI]
+
