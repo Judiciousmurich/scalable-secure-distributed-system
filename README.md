@@ -1,16 +1,46 @@
-# Secure Distributed Messenger
+# Distributed Task Scheduler
 
 ## Project Overview
-Distributed chat system with multi-threading, secure communication, and robust error handling.
+A scalable and secure distributed system for parallel task processing using Python.
 
-## Setup
-1. Create virtual environment
-2. Install dependencies: `pip install -r requirements.txt`
-3. Generate SSL certificates
-4. Run server: `python -m src.server.main`
-5. Run client: `python -m src.client.main`
+## Project Structure
+- `src/`: Source code
+  - `server/`: Server-side implementation
+  - `client/`: Client-side implementation
+  - `utils/`: Utility functions
+- `docs/`: Project documentation
+- `tests/`: Unit and integration tests
 
-## Features
-- Secure SSL/TLS encryption
-- Concurrent client handling
-- Distributed message processing
+## Setup Instructions
+
+### Prerequisites
+- Python 3.8+
+- pip package manager
+
+### Installation
+1. Clone the repository
+2. Create a virtual environment
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+```
+
+3. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Running the System
+- Start the server: `python src/server/main_server.py`
+- Start a client: `python src/client/main_client.py`
+
+## Project Phases
+1. System Design
+2. Environment Setup
+3. Distributed Task Execution
+4. Fault Tolerance and Security
+5. Final Demonstration
+
+## Contributors
+[Your Name]
+[Your Registration Number]
