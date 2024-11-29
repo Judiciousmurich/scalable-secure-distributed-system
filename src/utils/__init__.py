@@ -1,0 +1,1 @@
+from src.utils.logger import setup_logging  # Instead of just from utils.logger
