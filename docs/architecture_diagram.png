@@ -1,0 +1,13 @@
+               +----------------------------+
+               |    Central Task Coordinator|
+               |        Server (Main Server) |
+               +----------------------------+
+                         |   |   |  
+       -------------------   |   -------------------
+      |                     |   |                     |
++--------------+     +--------------+            +--------------+
+| Client 1: Task|     | Client 2: Task|            | Client 3: Task|
+| Worker       |     | Worker       |            | Worker       |
++--------------+     +--------------+            +--------------+
+       |                     |                        |
+   Local Task Queue    Local Task Queue         Local Task Queue
