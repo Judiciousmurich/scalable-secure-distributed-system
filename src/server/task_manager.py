@@ -9,7 +9,7 @@ from src.utils.logger import setup_logging, log_info, log_error
 # Set up a logger specifically for task management
 logger = setup_logging("task_manager")
 
-def handle_client_task(conn, addr):
+def handle_task(conn, addr):
     """
     Handles tasks assigned by the client.
 
@@ -34,7 +34,7 @@ def handle_client_task(conn, addr):
                 log_info(logger, f"Client {addr} requested disconnection.")
                 break
             
-            # Process the task (in this example, just echoing it back)
+            # Process the task (e.g., just echoing it back)
             result = f"Task '{task}' completed successfully.\n"
             conn.sendall(result.encode())
             log_info(logger, f"Task from {addr} processed: {task}")

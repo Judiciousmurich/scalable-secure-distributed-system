@@ -1,24 +1,32 @@
 import socket
-from utils.security import secure_send, secure_receive
 
-HOST = '127.0.0.1'
-PORT = 9999
+def run_client():
+    host = '127.0.0.1'  # Server address
+    port = 9999          # Port the server is listening on
 
-def main():
+    # Create a socket object
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.connect((HOST, PORT))
-
+    
     try:
-        secure_send(client_socket, "admin:password")  # Sending credentials
-        response = secure_receive(client_socket)
-        print(f"Server Response: {response}")
-
-        task = input("Enter a task (e.g., PING or ECHO:<message>): ")
-        secure_send(client_socket, task)
-        response = secure_receive(client_socket)
-        print(f"Server Response: {response}")
-    finally:
+        # Connect to the server
+        client_socket.connect((host, port))
+        
+        # Receive welcome message
+        welcome_message = client_socket.recv(1024).decode()
+        print(welcome_message)
+        
+        # Send a task
+        client_socket.sendall(b"Test Task")
+        
+        # Receive the result
+        result = client_socket.recv(1024).decode()
+        print(result)
+        
+        # Close the connection
+        client_socket.sendall(b"exit")
         client_socket.close()
+    except Exception as e:
+        print(f"Error: {e}")
 
 if __name__ == "__main__":
-    main()
+    run_client()
